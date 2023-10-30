@@ -37,9 +37,9 @@ public class Controller {
     */
     @GetMapping("/hello")
     public String hello() {
-        logger.info("My Name is khan " + emoji);
+        logger.info("Hello " + emoji);
        logger.info("applicationName " + applicationName);
-        return "My Name is khan " + emoji;
+        return "Hello " + emoji;
     }
 
     @GetMapping("/method1")

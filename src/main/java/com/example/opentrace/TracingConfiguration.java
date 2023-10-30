@@ -1,10 +1,27 @@
 package com.example.opentrace;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
+import org.springframework.boot.SpringApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
-public class TracingConfiguration {
+@EnableSwagger2
+public class TracingConfiguration  implements ApplicationRunner {
+
+    private static final Logger logger = LogManager.getLogger(TracingConfiguration.class);
+
+    public static void main(String[] args) {
+        SpringApplication.run(TracingConfiguration.class, args);
+    }
+
+    @Override
+    public void run(ApplicationArguments applicationArguments) throws Exception {
+    }
 
  /*   @Bean
     public Tracer jaegerTracer() {
